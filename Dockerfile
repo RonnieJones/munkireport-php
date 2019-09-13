@@ -35,7 +35,7 @@ RUN curl --silent --fail --location --retry 3 --output /tmp/installer.php --url 
 ENV SITENAME MunkiReport
 ENV MODULES ard, bluetooth, disk_report, munkireport, managedinstalls, munkiinfo, network, security, warranty, filevault_status, homebrew, wifi
 ENV INDEX_PAGE ""
-ENV AUTH_METHODS NOAUTH
+ENV AUTH_METHODS LOCAL
 
 COPY . $APP_DIR
 
