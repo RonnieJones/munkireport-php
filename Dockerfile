@@ -33,7 +33,7 @@ RUN curl --silent --fail --location --retry 3 --output /tmp/installer.php --url 
  && rm -rf /tmp/* /tmp/.htaccess
 
 ENV SITENAME CK Munki Report
-ENV MODULES ard, bluetooth, disk_report, munkireport, managedinstalls, munkiinfo, network, security, warranty, homebrew, wifi, softwareupdate, power, mdm_status
+ENV MODULES ard, bluetooth, disk_report, munkireport, managedinstalls, munkiinfo, network, security, warranty, homebrew, homebrew_info, wifi, softwareupdate, power, mdm_status, applications, appusage, devtools, fan_temps, gpu, installhistory, user_sessions 
 ENV INDEX_PAGE ""
 ENV AUTH_METHODS LOCAL
 
