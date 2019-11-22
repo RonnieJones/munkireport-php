@@ -1,4 +1,117 @@
-### [5.0.1](https://github.com/munkireport/munkireport-php/compare/v5.0.0...HEAD) (Unreleased)
+### [5.1.3](https://github.com/munkireport/munkireport-php/compare/v5.1.2...HEAD) (Unreleased)
+
+FEATURES
+  - Added an upgrade script (@lcsees)
+  - Added a docker compose example (@b-reich)
+
+FIXES
+  - MySQL port is now correctly used in admin panel
+  - Server timeout is now 60 seconds for slow servers
+  - Filter scripts for @ sign (Synology issue)
+  - LaunchDaemon changed to use KeepAlive instead of WatchPaths - should prevent the runner from starting twice
+  
+MODULE UPDATES
+  - munkireport/crashplan (v1.4 => V1.5)
+  - munkireport/managedinstalls (v2.2 => V2.3)
+
+DEPENDENCY UPDATES  
+  - guzzlehttp/guzzle (6.3.3 => 6.4.1)
+  - doctrine/event-manager (v1.0.0 => 1.1.0)
+  - doctrine/cache (v1.8.0 => 1.9.0)
+  - doctrine/dbal (v2.9.2 => v2.10.0)
+  - symfony/yaml (v3.4.32 => v3.4.33)
+  - symfony/var-dumper (v4.3.5 => v4.3.6)
+  - tightenco/collect (v6.3.0 => v6.4.1)
+  - psr/log (1.1.0 => 1.1.2)
+  - adldap2/adldap2 (v10.1.1 => v10.2.0)
+  - robrichards/xmlseclibs (3.0.3 => 3.0.4)
+  - onelogin/php-saml (3.3.0 => 3.3.1)
+  - symfony/service-contracts (v1.1.7 => v1.1.8)
+  - symfony/console (v4.3.5 => v4.3.6)
+  - symfony/process (v4.3.5 => v4.3.6)
+  - doctrine/inflector (v1.3.0 => 1.3.1)
+  - symfony/translation (v4.3.5 => v4.3.6)
+  - nesbot/carbon (2.25.2 => 2.26.0)
+  - symfony/finder (v4.3.5 => v4.3.6)
+  - phpoption/phpoption (1.5.0 => 1.5.2)
+
+### [5.1.2](https://github.com/munkireport/munkireport-php/compare/v5.1.1...v5.1.2) (October 19, 2019)
+
+Increase default script timeout to 30 seconds
+
+ MODULE UPDATES
+ - munkireport/security (v1.4 => V1.5)
+ 
+ DEPENDENCY UPDATES
+ - nesbot/carbon (2.25.1 => 2.25.2)
+ - league/flysystem (1.0.55 => 1.0.57)
+ - tightenco/collect (v6.2.0 => v6.3.0
+
+### [5.1.1](https://github.com/munkireport/munkireport-php/compare/v5.1.0...v5.1.1) (October 09, 2019)
+
+Notable changes: XSS patch, Catalina support for Storage report (@rickheil)
+filevault status rewrite (@tuxudo), mdm_status detail widget (@poundbangbash)
+
+FIXES
+- Prevent Cross Site Scripting attack (XSS) on login form
+
+MODULE UPDATES
+  - munkireport/disk_report (v2.4 => v2.7)
+  - munkireport/filevault_status (v1.1 => V1.2)
+  - munkireport/localadmin (v2.1 => v2.2)
+  - munkireport/mdm_status (v1.6 => v1.7)
+  - munkireport/network (v2.3 => v2.4)
+
+  DEPENDENCY UPDATES
+  - symfony/yaml (v3.4.31 => v3.4.32)
+  - symfony/var-dumper (v4.3.4 => v4.3.5)
+  - tightenco/collect (v6.0.3 => v6.2.0)
+  - symfony/service-contracts (v1.1.6 => v1.1.7)
+  - symfony/console (v4.3.4 => v4.3.5)
+  - symfony/process (v4.3.4 => v4.3.5)
+  - symfony/translation-contracts (v1.1.6 => v1.1.7)
+  - symfony/translation (v4.3.4 => v4.3.5)
+  - nesbot/carbon (2.24.0 => 2.25.1)
+  - symfony/finder (v4.3.4 => v4.3.5)
+
+
+### [5.1.0](https://github.com/munkireport/munkireport-php/compare/v5.0.1...v5.1.0) (September 24, 2019)
+
+Some bugfixes and a change on how the client summary tab is rendered. Removed legacy modules.
+
+NEW FEATURES
+- Customizable client summary tab https://github.com/munkireport/munkireport-php/wiki/Client-Summary-Tab
+
+FIXES
+- Fix issue with extra slashes in URL. Some web servers can't handle the double slash and fail. (#1275) @poundbangbash
+- Fix munkireport-runner: Add long_username and uid
+
+MODULE UPDATES
+  - Removed munkireport/service (v1.1)
+  - Removed munkireport/servermetrics (v1.1)
+  - munkireport/ard (v2.0 => 2.1)         
+  - munkireport/machine (v2.2 => v2.3)         
+  - munkireport/disk_report (v2.3 => v2.4)         
+  - munkireport/warranty (v2.0 => v2.1)         
+  - munkireport/appusage (v2.1 => v2.2)
+  - munkireport/bluetooth (v1.1 => v1.2)         
+  - munkireport/caching (v1.2 => v1.3)
+  - munkireport/comment (v2.0 => v2.1)         
+  - munkireport/crashplan (v1.2 => v1.4)         
+  - munkireport/detectx (v2.1 => v2.2)         
+  - munkireport/fan_temps (V1.4 => v1.5)         
+  - munkireport/localadmin (v2.0 => v2.1)         
+  - munkireport/network (v2.2 => v2.3)         
+  - munkireport/security (v1.3 => v1.4)         
+  - munkireport/timemachine (v1.3 => v1.4)         
+  - munkireport/user_sessions (v1.2 => v1.3)
+
+DEPENDENCY UPDATES
+  - adldap2/adldap2 (v10.1.0 => v10.1.1)         
+
+
+
+### [5.0.1](https://github.com/munkireport/munkireport-php/compare/v5.0.0...v5.0.1) (September 19, 2019)
 
 Small bugfix release which incorporates updated modules.
 

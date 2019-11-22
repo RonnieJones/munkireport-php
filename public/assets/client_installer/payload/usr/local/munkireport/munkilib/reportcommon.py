@@ -73,6 +73,7 @@ def curl(url, values):
     options["content_type"] = "application/x-www-form-urlencoded"
     options["body"] = urlencode(values)
     options["logging_function"] = display_detail
+    options["connection_timeout"] = 60
     if pref('UseMunkiAdditionalHttpHeaders'):
         custom_headers = prefs.pref(
                             constants.ADDITIONAL_HTTP_HEADERS_KEY)
@@ -312,7 +313,7 @@ def process(serial, items):
         display_detail('No changes')
 
 def runExternalScriptWithTimeout(script, allow_insecure=False,\
-        script_args=(), timeout=10):
+        script_args=(), timeout=30):
     """Run a script (e.g. preflight/postflight) and return its exit status.
 
     Args:
@@ -377,7 +378,7 @@ def rundir(scriptdir, runtype, abort=False, submitscript=''):
         from munkilib import utils
 
         # Get timeout for scripts
-        scriptTimeOut = 10
+        scriptTimeOut = 30
         if pref('scriptTimeOut'):
             scriptTimeOut = int(pref('scriptTimeOut'))
             display_detail('# Set custom script timeout to %s seconds' % scriptTimeOut)
